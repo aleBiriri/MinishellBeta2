@@ -42,8 +42,10 @@ int main(void) {
 		if(igualComandos(line,"cd",2))
 			cd(line->commands[0].argv[1]);
 		else if(igualComandos(line,"jobs",4))
+			//AÑADIR CODIGO DEL JOBS
 			printf("Es un jobs\n");
 		else if(igualComandos(line,"fg",2))
+			//AÑADIR CODIGO DEL FG
 			printf("Es un fg\n");
 		else if((comprobacionMandatos(line) != 0)){
 			if(line->ncommands == 1){ // si solo hay un comando
@@ -86,7 +88,6 @@ int main(void) {
 			else{
 
 				int salidaPipe;
-				 fprintf(stderr,"Hola, hay mas de un mandato.\n");
 				/*RESERVAMOS MEMORIA PARA GUARDAR LOS PIDS*/
 				hijos = malloc(line->ncommands*sizeof(int));
 				for(i = 0; i < line->ncommands; i++)
@@ -171,8 +172,7 @@ int main(void) {
                                         		execvp(line->commands[i].filename,line->commands[i].argv);
                                         		exit(1);
                        	 			}
-                        			else{
-							fprintf(stderr,"Hola soy el padre.\n");
+                        			else{ // CODIGO DEL PADRE
                                 			close(p[1]);
                                 			close(p[0]);
                                 			int j;
@@ -186,34 +186,6 @@ int main(void) {
 
 				}//FIN FOR
 			}//FIN SI HAY MAS DE UN MANDATO
-
-
-
-
-
-
-
-
-
-		/*
-		if (line->redirect_input != NULL) {
-			printf("redirección de entrada: %s\n", line->redirect_input);
-		}
-		if (line->redirect_output != NULL) {
-			printf("redirección de salida: %s\n", line->redirect_output);
-		}
-		if (line->redirect_error != NULL) {
-			printf("redirección de error: %s\n", line->redirect_error);
-		}
-		if (line->background) {
-			printf("comando a ejecutarse en background\n");
-		}
-		for (i=0; i<line->ncommands; i++) {
-			printf("orden %d (%s):\n", i, line->commands[i].filename);
-			for (j=0; j<line->commands[i].argc; j++) {
-				printf("  argumento %d: %s\n", j, line->commands[i].argv[j]);
-			}
-		}*/
 		}
 		}
 		printf("msh> ");
@@ -238,7 +210,7 @@ void manejador(int sig){
 	/* SI SOY UN HIJO Y NO ESTOY EN BACKGROUND HAGO UN EXIT*/
 //	fprintf(stderr,"HOLA ME LLEGO LA SEÑAL, UN HIJO A TERMINADO.\n");
 }
-
+//FUNCIÓN PARA COMPARAR EL COMANDO QUE SE ESCRIBIO CON OTRO( CON SU NOMBRE DE QUE SE LE PASA COMO STRING)
 int igualComandos(tline* l,char * cadena,int tope){
 
 	int i,bandera = 0;
@@ -252,6 +224,7 @@ int igualComandos(tline* l,char * cadena,int tope){
 	return bandera;
 }
 
+// FUNCION CD
 void cd(char * directorio){
 	char directorioActual[FILENAME_MAX];
 	if(directorio == NULL)
