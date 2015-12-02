@@ -1,0 +1,13 @@
+total 116
+-rw-r--r-- 1 root      root          0 Nov 21 12:32 Entrada.txt
+-rw-r--r-- 1 alejandro alejandro 20730 Dec 10  2013 libparser_64.a
+-rw-r--r-- 1 alejandro alejandro 13166 Dec 10  2013 libparser.a
+-rwxrwxrwx 1 alejandro alejandro 12508 Nov 11 17:06 minishell.zip
+-rwxrwxr-x 1 alejandro alejandro   267 Nov  8  2011 parser.h
+-rwxr-xr-x 1 root      root       7472 Nov 21 17:57 prueba
+-rwxr-xr-x 1 root      root       7528 Nov 19 21:20 prueba2
+-rw-r--r-- 1 root      root       2096 Nov 19 21:20 prueba2.c
+-rw-r--r-- 1 root      root        358 Nov 21 17:57 prueba.c
+-rw-r--r-- 1 root      root          0 Nov 23 21:24 Salida.txt
+-rwxr-xr-x 1 root      root      21200 Nov 23 21:22 test
+-rw-rw-r-- 1 alejandro alejandro  7730 Nov 23 21:22 test.c
